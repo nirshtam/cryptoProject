@@ -1,0 +1,88 @@
+.parallax {
+  background-image: url("assets/parallax.jpg");
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+* {
+  content-visibility: auto;
+}
+
+#pages {
+  display: flex;
+  justify-content: center;
+}
+
+#pages > .btn {
+  margin: 5px;
+  color: white;
+}
+
+.custom-switch > * {
+  content-visibility: visible !important;
+}
+
+.custom-switch {
+  display: inline-block;
+  margin-left: 265px;
+}
+
+.card-body {
+  margin-top: -20px;
+}
+#header {
+  height: 120px;
+}
+
+h2 {
+  color: white;
+}
+
+nav {
+  margin-top: -15px;
+}
+
+#thumbnailWrapper {
+  margin: auto;
+}
+
+#headerThumbnail {
+  width: 110px;
+  height: 110px;
+}
+
+#title {
+  margin: auto;
+}
+
+#navLinks {
+  display: inline-block;
+  position: relative;
+  left: 44%;
+}
+#cards {
+  margin-left: 6vw;
+  height: 100%;
+}
+#cards > div {
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 20px;
+  width: 320px;
+  height: 180px;
+}
+
+.collapse {
+  color: black;
+}
+
+.coins-collapse {
+  margin-top: 50px;
+}
+
+p {
+  font-size: 15px;
+}

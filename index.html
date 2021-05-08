@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto</title>
+    <script src="jQuery/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+      integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="main.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="container-fluid parallax" onload="getCoins()">
+    <div class="d-flex bg-dark" id="header">
+      <div id="title" class="col-md-10 col-8 mr-auto">
+        <h2>Crypto Market</h2>
+      </div>
+      <div id="thumbnailWrapper" class="ml-auto">
+        <img id="headerThumbnail" src="assets/headThumbnail2.png" />
+      </div>
+    </div>
+    <br />
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a id="homePage" class="navbar-brand" href="#">Home</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarToggler"
+        aria-controls="navbarToggler"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a id="reportsPage" href="#" class="nav-link">Live Reports <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a id="aboutPage" href="#" class="nav-link">About</a>
+          </li>
+        </ul>
+        <div class="form-inline my-2 my-lg-0">
+          <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search" />
+          <button id="searchBtn" class="btn btn-outline-success my-2 my-sm-0" type="btn">Search</button>
+        </div>
+      </div>
+    </nav>
+
+    <br />
+    <div id="cards"></div>
+
+    <div id="pages">
+      <button id="prevBtn" class="btn bg-dark my-2 my-sm-0" type="btn"><- Prev</button>
+      <button id="nextBtn" class="btn bg-dark my-2 my-sm-0" type="btn">Next -></button>
+    </div>
+  </body>
+</html>
