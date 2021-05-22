@@ -3,6 +3,9 @@
 $(`#aboutPage`).on("click", async function () {
   //Navbar About Click Event, loads the html from the about.html page
   let pageContent = await ajaxRequest("about.html");
+  $("#prevBtn").remove();
+  $("#nextBtn").remove();
+  $("#search").prop("disabled", true);
   $("#cards").html(pageContent);
 });
 

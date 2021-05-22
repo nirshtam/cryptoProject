@@ -45,17 +45,14 @@ nav {
   margin-top: -15px;
 }
 
-#thumbnailWrapper {
-  margin: auto;
-}
-
 #headerThumbnail {
   width: 110px;
   height: 110px;
 }
 
 #title {
-  margin: auto;
+  margin-left: 0px;
+  margin-top: 40px;
 }
 
 #navLinks {
