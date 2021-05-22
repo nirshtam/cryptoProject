@@ -56,11 +56,9 @@ async function getCoins() {
   try {
     let pageIndex = 0;
     let checkedMap = new Map();
-    let response;
-    response = await ajaxRequest("https://api.coingecko.com/api/v3/coins/list");
-
     let cardArray = new Array();
     let cardIdArray = new Array();
+    let response = await ajaxRequest("https://api.coingecko.com/api/v3/coins/list");
 
     for (coin of response) {
       sessionStorage.setItem(`${coin.id}`, "-1");
