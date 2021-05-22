@@ -7,6 +7,31 @@
   background-size: cover;
 }
 
+.profile {
+  border-radius: 50%;
+  margin-top: -160px;
+}
+
+#aboutPlaceHolder {
+  display: flex;
+  justify-content: center;
+}
+
+#aboutCard {
+  background-color: rgb(41, 43, 44, 0.95);
+  width: 60%;
+  height: 90%;
+}
+
+#aboutBody > .card-title {
+  margin-top: 5px;
+  text-align: center;
+}
+#aboutBody > .card-text {
+  font-size: 28px;
+  text-align: center;
+}
+
 * {
   content-visibility: auto;
 }

@@ -6,7 +6,9 @@ $(`#aboutPage`).on("click", async function () {
   $("#prevBtn").remove();
   $("#nextBtn").remove();
   $("#search").prop("disabled", true);
-  $("#cards").html(pageContent);
+  $("#aboutPlaceHolder").html(pageContent);
+  $("#cards").html("");
+  $("#aboutPlaceHolder").height("500px");
 });
 
 $(`#homePage`).on("click", async function () {
@@ -54,6 +56,7 @@ async function getCoins() {
   //deals with creating the bootstrap cards of the coins
   //creates the events for the created elements
   try {
+    $("#aboutPlaceHolder").height("0px");
     let pageIndex = 0;
     let checkedMap = new Map();
     let cardArray = new Array();
