@@ -8,7 +8,7 @@ $(`#aboutPage`).on("click", async function () {
   $("#search").prop("disabled", true);
   $("#aboutPlaceHolder").html(pageContent);
   $("#cards").html("");
-  $("#aboutPlaceHolder").height("500px");
+  $("#aboutPlaceHolder").height("520px");
 });
 
 $(`#homePage`).on("click", async function () {
