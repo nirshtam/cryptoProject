@@ -8,7 +8,7 @@ $(`#aboutPage`).on("click", async function () {
   $("#search").prop("disabled", true);
   $("#aboutPlaceHolder").html(pageContent);
   $("#cards").html("");
-  $("#aboutPlaceHolder").height("500px");
+  $("#aboutPlaceHolder").height("520px");
 });
 
 $(`#homePage`).on("click", async function () {
@@ -50,12 +50,23 @@ function ajaxRequest(url) {
   });
 }
 
+function setOriginAccess() {
+  // sets the origin access permissions
+  const express = require("express");
+  const app = express();
+  app.use(
+    cors({
+      origin: "http://127.0.0.1:5500",
+    })
+  );
+}
 async function getCoins() {
   //this function is called on body load
   //receives the coins from the API
   //deals with creating the bootstrap cards of the coins
   //creates the events for the created elements
   try {
+    setOriginAccess();
     $("#aboutPlaceHolder").height("0px");
     let pageIndex = 0;
     let checkedMap = new Map();
