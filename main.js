@@ -57,6 +57,7 @@ async function getCoins() {
   //creates the events for the created elements
   try {
     $("#aboutPlaceHolder").height("0px"); //resets about page div
+
     let pageIndex = 0;
     let checkedMap = new Map();
     let cardArray = new Array();
