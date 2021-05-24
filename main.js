@@ -57,6 +57,7 @@ async function getCoins() {
   //creates the events for the created elements
   try {
     $("#aboutPlaceHolder").height("0px"); //resets about page div
+
     let pageIndex = 0;
     let checkedMap = new Map();
     let cardArray = new Array();
@@ -96,8 +97,8 @@ async function getCoins() {
       nextBtnOnClickFunc();
     });
 
-    $(document).on("click", ".infoBtn", function () {
-      infoBtnOnClickFunc = infoBtnOnClick.bind(this);
+    $(document).on("click", ".infoBtn", async function () {
+      infoBtnOnClickFunc = await infoBtnOnClick.bind(this);
       infoBtnOnClickFunc();
     });
 
@@ -129,9 +130,11 @@ async function getCoins() {
       $("#cards").html(tmp.splice(pageIndex * 15, 15));
     }
 
-    function infoBtnOnClick() {
+    async function infoBtnOnClick() {
       //display the info of the coin clicked
-      displayInfo(this.parentElement.parentElement, this);
+      $(`#${this.parentElement.parentElement.id}Btn`).attr("disabled", true);
+      await displayInfo(this.parentElement.parentElement, this);
+      $(`#${this.parentElement.parentElement.id}Btn`).attr("disabled", false);
     }
 
     function searchBtnOnClick() {
