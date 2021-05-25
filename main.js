@@ -70,12 +70,15 @@ async function getCoins() {
       cardArray.push(addCard(coin));
     }
 
-    let temp = [...cardArray];
     let splicedCardArray = new Array();
-
-    for (let i = 0; i < temp.length - 15; i += 15) {
-      splicedCardArray.push(temp.splice(i, 15));
+    for (let i = 0; i < cardArray.length - 15; i += 15) {
+      splicedCardArray.push([...cardArray].splice(i, 15));
     }
+
+    if (pageIndex == 0) {
+      $("#prevBtn").attr("disabled", true);
+    }
+
     $("#cards").append([...cardArray].splice(pageIndex * 15, 15));
 
     //-----------------------------Events-------------------------------
@@ -90,11 +93,13 @@ async function getCoins() {
     $("#prevBtn").on("click", function () {
       prevBtnOnClickFunc = prevBtnOnClick.bind(this);
       prevBtnOnClickFunc();
+      checkIndex();
     });
 
     $("#nextBtn").on("click", function () {
       nextBtnOnClickFunc = nextBtnOnClick.bind(this);
       nextBtnOnClickFunc();
+      checkIndex();
     });
 
     $(document).on("click", ".infoBtn", async function () {
@@ -113,6 +118,19 @@ async function getCoins() {
     });
 
     // -----------------------Event Handlers-----------------------------
+    function checkIndex() {
+      //disables the prev and next buttons according to the page index
+      if (pageIndex == 0) {
+        $("#prevBtn").attr("disabled", true);
+      } else {
+        $("#prevBtn").attr("disabled", false);
+      }
+      if (pageIndex == splicedCardArray.length) {
+        $("#nextBtn").attr("disabled", true);
+      } else {
+        $("#nextBtn").attr("disabled", false);
+      }
+    }
 
     function prevBtnOnClick() {
       //when prev button is clicked, the website loads the previous 15 coins
@@ -132,7 +150,7 @@ async function getCoins() {
 
     async function infoBtnOnClick() {
       //display the info of the coin clicked
-      $(`#${this.parentElement.parentElement.id}Btn`).attr("disabled", true);
+      $(`#${this.parentElement.parentElement.id}Btn`).attr("disabled", true); //disables multiple clicks
       await displayInfo(this.parentElement.parentElement, this);
       $(`#${this.parentElement.parentElement.id}Btn`).attr("disabled", false);
     }
